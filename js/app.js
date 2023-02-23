@@ -1,14 +1,17 @@
-let userName = "Kasper";
-let userAge = "18";
+let button = document.getElementById("button");
 
-if (userName == "Kasper") {
-  console.log("Hej Kasper din seje reje");
-} else {
-  console.log("du hedder ikke Kasper");
+let input = document.getElementById("input");
+
+button.addEventListener("click", changeColor);
+
+input.addEventListener("keyup", (event) => {
+  changeText(event.target.value);
+});
+
+function changeColor() {
+  document.getElementById("h1-tag").style.color = "red";
 }
 
-if (userAge >= 19) {
-  console.log("du er ikke gammel nok din lille lort");
-} else {
-  console.log("du er gammel nok din store lort");
+function changeText(text) {
+  document.getElementById("h1-tag").innerText = text;
 }
